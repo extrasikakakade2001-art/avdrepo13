@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define Python path once, so we can reuse it
-        PYTHON = 'C:\\Users\\Aiden Pierce\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+        PYTHON = '"C:\\Users\\Aiden Pierce\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"'
     }
 
     stages {
