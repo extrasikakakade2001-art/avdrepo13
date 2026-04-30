@@ -18,10 +18,15 @@ pipeline {
                 bat "${env.PYTHON} --version"
             }
         }
-
+        stage('install dependencies') {
+            steps{
+                bat "${env.PYTHON} -m pip install -r requirements.txt "
+            }
+        }
         stage('Run extract.py') {
             steps {
-                bat "${enc.PYTHON} extract.py"
+                bat "${env.PYTHON} extract.py"
+            
             }
          }  
      }
