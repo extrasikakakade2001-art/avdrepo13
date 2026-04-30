@@ -1,23 +1,29 @@
 pipeline {
     agent any 
-    enviroment {
+
+
+    environment {
         PYTHON = 'C:\\Users\\Aiden Pierce\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
     }
+
     stages {
-        stage ('Checkout Code') {
+        stage('Checkout Code') {
             steps {
-                checkout scm 
+              checkout scm 
             }
         }
-        stage ('Show Python Version') {
+
+        stage('Show Python version') {
             steps {
-                bat "${env.PYTHON} --Version"
+                bat "${env.PYTHON} --version"
             }
-           stage ('Run extract.py') {
-               steps {
+        }
+
+        stage('Run extract.py') {
+            steps {
                 bat "${enc.PYTHON} extract.py"
-               }
-           }  
-        }
-    }
-}                                     
+            }
+         }  
+     }
+}
+                                     
